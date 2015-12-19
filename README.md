@@ -1,42 +1,26 @@
 # sensu-test-cookbook
 
-TODO: Enter the cookbook description here.
+Multi Sensu instance cookbook to be run in test-kitchen for evaluation purposes.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
-
-## Attributes
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['sensu-test']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+ * Ubuntu 14.04
 
 ## Usage
+The kitchen.yml defines two instances, a server and a client.  Each has its own IP address.  The server dashboard can be reached at 192.168.17.51:3000.
 
-### sensu-test::default
+To create the cluster, first configure the server
 
-Include `sensu-test` in your node's `run_list`:
+```
+kitchen converge server
+```
 
-```json
-{
-  "run_list": [
-    "recipe[sensu-test::default]"
-  ]
-}
+Then create the client
+
+```
+kitchen converge client
 ```
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Daniel Klopp (<dsklopp@gmail.com>)
