@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "cron": {
+      "command": "check-procs.rb -p cron",
+      "subscribers": [
+        "all"
+      ],
+      "interval": 60
+    }
+  }
+}
